@@ -1,0 +1,14 @@
+@font-face{
+    font-family: luckiest;
+    src: url("../src/components/fonts/LuckiestGuy-Regular.ttf");
+}
+
+@import "tailwindcss";
+
+
+@theme{
+    --color-verdeAgua: #32C49B;
+    --color-button: #2E7E68;
+    --color-header: #373737;
+    --font-luckiest: luckiest, "sans-serif";
+}

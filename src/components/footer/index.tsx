@@ -1,0 +1,22 @@
+import LinkedInLogo from "../../images/White_Linkedin_Logo-png-6.jpg"
+import InstaLogo from "../../images/Instagram_Logo.png"
+import PetWalkerLogo from "../../images/Logo_In-line.png"
+import GitHubLogo from "../../images/GitHub_Logo_White.png"
+
+export function Footer(){
+    return(
+        <footer className="flex flex-col w-full h-60 bg-header select-none items-center justify-center">
+            <section className="flex mb-13">
+                <img src={PetWalkerLogo} className="max-h-7" alt="logo-petWalker"/>
+                <span className="flex justify-center items-center w-2 h-2 mt-3 bg-white rounded-full mx-3"></span>
+                <p className="text-white text-2xl font-medium">Project By: Lucas Tadeu</p>
+            </section>
+
+            <section className="flex items-center justify-center">
+                <a href="https://linkedin.com/in/lucas-tadeu-4828a3330/"><img src={LinkedInLogo} className="max-h-10 mx-5 cursor-pointer hover:scale-115 duration-300" alt="linkedin-logo" /></a>
+                <a href="https://www.instagram.com/lucasst14"><img src={InstaLogo} className="max-h-20 cursor-pointermx-5 hover:scale-115 duration-300" alt="instagram-logo"/></a>
+                <a href="https://github.com/LucasTadeu14?tab=repositories"><img src={GitHubLogo} className="max-h-15 mx-5 cursor-pointer hover:scale-115 duration-300" alt="gitHub-logo" /></a>
+            </section>
+        </footer>
+    )
+}
