@@ -20,7 +20,7 @@ export function Home() {
         </h1>
 
         <p className="text-center font-medium text-white my-5 text-[22px]">
-          Monitore, localize e fique tranquilo! Descubra como é fácil <br />
+          Monitore, localize e fique tranquilo, Descubra como é fácil <br />
           saber onde seu melhor amigo está, a qualquer hora, em <br />
           qualquer lugar. Segurança, diversão e liberdade para você e <br />
           seu pet curtirem juntos.
