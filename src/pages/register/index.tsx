@@ -107,7 +107,7 @@ export function Register() {
         </nav>
       </section>
 
-      <section className="flex-3 flex items-center justify-center">
+      <section className="hidden 2xl:flex-3 2xl:flex items-center justify-center">
         <img
           src={FirstPageImage}
           alt="Imagem inicial PetWalker"

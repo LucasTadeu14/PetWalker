@@ -35,7 +35,7 @@ export function Login() {
   }
 
   return (
-    <div className="flex flex-row h-dvh select-none">
+    <div className="flex flex-row h-dvh select-none max-h-dvh">
       <section className="bg-emerald-400 flex-1 flex flex-col items-center relative">
         <div className="flex w-full items-start">
           <img
@@ -107,7 +107,7 @@ export function Login() {
         </nav>
       </section>
 
-      <section className="flex-3 flex items-center justify-center">
+      <section className="hidden 2xl:flex-3 2xl:flex items-center justify-center">
         <img
           src={FirstPageImage}
           alt="Imagem inicial PetWalker"
