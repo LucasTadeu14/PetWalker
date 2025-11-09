@@ -5,24 +5,24 @@ export function Home() {
     
   return (
     <div
-      className="sm:flex justify-center bg-cover bg-center 2xl:grid 2xl:grid-cols-3 h-screen items-center flex select-none"
+      className="sm:flex justify-center bg-cover bg-center 2xl:grid 3xl:grid-cols-3 h-screen items-center flex select-none"
       style={{ backgroundImage: `url(${BackGround})` }}
     >
       <img
         src={CatImage}
         alt="gato do home"
-        className="hidden 2xl:flex max-h-screen justify-self-start"
+        className="hidden 3xl:flex max-h-screen justify-self-start"
       />
 
       <div className="select-none flex flex-col justify-center items-center">
-        <h1 className="text-center text-white font-medium font-luckiest uppercase text-7xl tracking-wide select-none my-5">
-          Localize seu PET <br /> sempre que <br /> quiser.
+        <h1 className="text-center text-white font-medium font-luckiest uppercase lg:text-7xl text-5xl tracking-wide select-none my-5">
+          Localize <br className="sm:hidden"/> seu PET <br /> sempre que <br /> quiser.
         </h1>
 
-        <p className="text-center text-white font-medium my-1 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed ">
-        Monitore, localize e fique tranquilo. Descubra como é fácil saber <br />
-        onde seu melhor amigo está — a qualquer hora, em qualquer lugar. <br />
-        Segurança, diversão e liberdade para você e seu pet curtirem juntos.
+        <p className="text-center text-white font-medium my-1 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl leading-relaxed ">
+        Monitore, localize e fique tranquilo. <br className="sm:hidden" /> Descubra como é fácil saber <br />
+        onde seu melhor amigo está <br className="sm:hidden"/> a qualquer hora, em qualquer lugar. <br />
+        Segurança, diversão e liberdade <br className="sm:hidden"/> para você e seu pet curtirem juntos.
         </p>
 
 

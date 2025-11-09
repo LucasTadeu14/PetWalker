@@ -35,8 +35,8 @@ export function Login() {
   }
 
   return (
-    <div className="flex flex-row h-dvh select-none max-h-dvh">
-      <section className="bg-emerald-400 flex-1 flex flex-col items-center relative">
+    <div className="flex flex-row h-dvh select-none  max-h-dvh">
+      <section className="bg-emerald-400 flex-1 transition-all duration-700 flex flex-col items-center relative">
         <div className="flex w-full items-start">
           <img
             src={LogoPata}
