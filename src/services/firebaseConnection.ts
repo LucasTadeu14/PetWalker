@@ -1,7 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from 'firebase/firestore'
 import { getAuth }  from 'firebase/auth'
- 
+import axios from 'axios'
+
+
+export const api = axios.create({
+  baseURL: "https://fake-api-g5pj.onrender.com"
+})
+   
 const firebaseConfig = {
   apiKey: "AIzaSyDfQHF9oEhzE68ZnnUIhlZ8ipkyRze6g-c",
   authDomain: "petwalker-99b7c.firebaseapp.com",

@@ -7,6 +7,7 @@ import { About } from "./pages/about";
 import { Layout } from "./components/layout";
 import { Error } from "./pages/Error"
 import { Private } from "./routes/Private";
+import { Products } from "./pages/products"
 
 
 const router = createBrowserRouter([
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <Private><About /></Private>,
+      },
+      {
+        path: "/Products",
+        element: <Private><Products /></Private>,
       },
     ],
   },

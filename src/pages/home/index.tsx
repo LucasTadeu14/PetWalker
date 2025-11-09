@@ -1,8 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import BackGround  from "../../images/BackGround_Page.jpg"
 import CatImage from "../../images/Cat_Home_Page.png"
  
 export function Home() {
-    
+    const navigate = useNavigate();
   return (
     <div
       className="sm:flex justify-center bg-cover bg-center 2xl:grid 3xl:grid-cols-3 h-screen items-center flex select-none"
@@ -27,8 +28,8 @@ export function Home() {
 
 
         <button
-          className="inline-flex items-center justify-center border-2 border-button rounded-full bg-button px-12 py-2.5 text-center text-white outline-0 transition-all duration-200 ease-in-out no-underline hover:bg-transparent hover:text-white cursor-pointer my-6"
-        >
+          onClick={() => navigate("/products")}
+          className="inline-flex items-center justify-center border-2 border-button rounded-full bg-button px-12 py-2.5 text-center text-white outline-0 transition-all duration-200 ease-in-out no-underline hover:bg-transparent hover:text-white cursor-pointer my-6">
           Começar
         </button>
       </div>

@@ -1,44 +1,57 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import logo from "../../images/logo.png"
-import { FiLogIn, FiUser, FiMenu } from "react-icons/fi";
-import { Link } from "react-router-dom";
+import { FiLogIn, FiUser, FiMenu, FiShoppingCart } from "react-icons/fi";
+import { Link, useNavigate } from "react-router-dom";
  
 const linkStyle = "mx-4 text-white hover:scale-105 hover:text-emerald-300 duration-100 select-none cursor-pointer"
 
 export function Header(){
     const { signed, loadingAuth} = useContext(AuthContext);
+    const navigate = useNavigate();
 
 
     return(
         <header className="w-full bg-header fixed z-50">
-            <nav className=" w-full flex h-17 items-center justify-between 2xl:max-w-7xl  select-none mx-auto">
-
-                <a href="/home"><img src={logo} alt="logo PetWalker" className="h-10 ml-5 hover:scale-105 duration-200 cursor-pointer"/></a>
-                <nav className="hidden sm:flex justify-center">
-                    <a href="/home" className={linkStyle}>Home</a>
-                    <a href="#" className={linkStyle}>Produtos</a>
-                    <a href="/about" className={linkStyle}>Sobre</a>
-                    <a href="#" className={linkStyle}>Dicas</a>
-                </nav>
+            <nav className="w-full flex h-17 items-center justify-between 2xl:max-w-7xl mx-auto select-none">
                 
+                <button onClick={() => navigate("/home")}>
+                <img src={logo} alt="logo PetWalker" className="h-10 ml-5 hover:scale-105 duration-200 cursor-pointer" />
+                </button>
+
+                <div className="hidden sm:flex justify-center gap-6">
+                <button onClick={() => navigate("/home")} className={linkStyle}>Home</button>
+                <button onClick={() => navigate("/products")} className={linkStyle}>Produtos</button>
+                <button onClick={() => navigate("/about")} className={linkStyle}>Sobre</button>
+                <button onClick={() => navigate("#")} className={linkStyle}>Dicas</button>
+                </div>
+
+                <div className="flex items-center gap-4 mr-5">
                 {!loadingAuth && signed && (
                     <Link to="/home">
-                    <FiUser size={24} color="#FFF" className="hidden sm:flex me-5 hover:scale-110 duration-150" />
+                    <FiUser size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
                     </Link>
                 )}
 
                 {!loadingAuth && !signed && (
                     <Link to="/">
-                        <FiLogIn size={24} color="#FFF" className=" hidden sm:flex mr-5 hover:scale-110 duration-150" />
+                    <FiLogIn size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
                     </Link>
                 )}
-                
-                <button className="sm:hidden flex mr-5">
-                    <FiMenu size={24} color="#FFF" className="sm:hidden flex"/>
-                </button>
+
+                <Link to="/cart">
+                    <FiShoppingCart size={24} color="#FFF" className="flex hover:scale-110 duration-150 cursor-pointer" />
+                </Link>
+
+                <Link to="#">
+                    <FiMenu size={24} color="#FFF" className="sm:hidden flex" />
+                </Link>
+
+                </div>
 
             </nav>
+
         </header>
+
     )
 }
