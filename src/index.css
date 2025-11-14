@@ -13,4 +13,5 @@
     --font-luckiest: luckiest, "sans-serif";
     --breakpoint-3xl: 1750px;
     --breakpoint-ms: 450px;
+    --background-color-products: rgba(255,255,255,0.1);
 }

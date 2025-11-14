@@ -24,7 +24,6 @@ export function Products() {
     getProducts();
   }, [])
 
-  const colors = ["rgba(255,255,255,0.1)", "rgba(0,0,0,0.3)"];
 
   return (
     <div
@@ -37,11 +36,10 @@ export function Products() {
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 2xl:grind-cols-1">
-          {products.map((product, index) => (
+          {products.map((product) => (
             <section
               key={product.id}
-              style={{ backgroundColor: colors[index % colors.length] }}
-              className="w-full rounded-2xl p-4 flex flex-col shadow-lg backdrop-blur-md"
+              className="w-full rounded-2xl p-4 flex flex-col shadow-lg bg-products backdrop-blur-md"
             >
               <img
                 className="rounded-xl max-h-60 object-cover mb-3"
