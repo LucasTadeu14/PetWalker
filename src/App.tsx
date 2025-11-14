@@ -12,7 +12,7 @@ import { Products } from "./pages/products"
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/login",
     element: <Login />,
   },
   {
@@ -27,8 +27,8 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/home",
-        element: <Private><Home /></Private>,
+        path: "/",
+        element: <Home />,
       },
       {
         path: "/cart",
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/about",
-        element: <Private><About /></Private>,
+        element: <About />,
       },
       {
         path: "/Products",

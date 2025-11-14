@@ -15,12 +15,12 @@ export function Header(){
         <header className="w-full bg-header fixed z-50">
             <nav className="w-full flex h-17 items-center justify-between 2xl:max-w-7xl mx-auto select-none">
                 
-                <button onClick={() => navigate("/home")}>
+                <button onClick={() => navigate("/")}>
                 <img src={logo} alt="logo PetWalker" className="h-10 ml-5 hover:scale-105 duration-200 cursor-pointer" />
                 </button>
 
                 <div className="hidden sm:flex justify-center gap-6">
-                <button onClick={() => navigate("/home")} className={linkStyle}>Home</button>
+                <button onClick={() => navigate("/")} className={linkStyle}>Home</button>
                 <button onClick={() => navigate("/products")} className={linkStyle}>Produtos</button>
                 <button onClick={() => navigate("/about")} className={linkStyle}>Sobre</button>
                 <button onClick={() => navigate("#")} className={linkStyle}>Dicas</button>
@@ -28,13 +28,13 @@ export function Header(){
 
                 <div className="flex items-center gap-4 mr-5">
                 {!loadingAuth && signed && (
-                    <Link to="/home">
+                    <Link to="/login">
                     <FiUser size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
                     </Link>
                 )}
 
                 {!loadingAuth && !signed && (
-                    <Link to="/">
+                    <Link to="/login">
                     <FiLogIn size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
                     </Link>
                 )}

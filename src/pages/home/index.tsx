@@ -21,9 +21,9 @@ export function Home() {
         </h1>
 
         <p className="text-center text-white font-medium my-1 sm:text-lg md:text-xl lg:text-2xl xl:text-2xl leading-relaxed ">
-        Monitore, localize e fique tranquilo. <br className="sm:hidden" /> Descubra <br />como é fácil saber 
-        onde seu melhor amigo <br />está <br className="sm:hidden"/> a qualquer hora, em qualquer lugar. 
-        Segurança, diversão e liberdade <br className="sm:hidden"/> para você e seu pet curtirem juntos.
+        Monitore, localize e fique tranquilo. Descubra <br />como é fácil saber 
+        onde seu melhor amigo <br />está a qualquer hora, em qualquer lugar. 
+        Segurança,<br/> diversão e liberdade para você e seu pet curtirem juntos.
         </p>
 
 

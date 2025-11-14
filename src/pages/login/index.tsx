@@ -26,7 +26,7 @@ export function Login() {
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
         console.log("Login realizado com sucesso!");
-        navigate("/home", { replace: true });
+        navigate("/", { replace: true });
       })
       .catch((error) => {
         alert("Erro ao fazer login!");
