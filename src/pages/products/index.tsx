@@ -63,7 +63,7 @@ export function Products() {
                   })}
                 </strong>
 
-                <button className="bg-zinc-900 hover:bg-zinc-800 p-2 rounded transition">
+                <button className="bg-emerald-800 hover:scale-110 duration-50 cursor-pointer p-2 rounded-md transition">
                   <BsCartPlus size={20} color="#FFF" />
                 </button>
               </div>

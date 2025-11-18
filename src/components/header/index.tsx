@@ -1,14 +1,22 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import logo from "../../images/logo.png"
-import { FiLogIn, FiUser, FiMenu, FiShoppingCart } from "react-icons/fi";
+import { FiMenu, FiShoppingCart, FiLogOut, FiUser } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../../services/firebaseConnection";
+import { CartContext } from "../../contexts/CartContext";
  
 const linkStyle = "mx-4 text-white hover:scale-105 hover:text-emerald-300 duration-100 select-none cursor-pointer"
 
 export function Header(){
     const { signed, loadingAuth} = useContext(AuthContext);
     const navigate = useNavigate();
+    const { cartAmount } = useContext(CartContext);
+
+    async function logOut(){
+        await signOut(auth)
+    }
 
 
     return(
@@ -28,19 +36,24 @@ export function Header(){
 
                 <div className="flex items-center gap-4 mr-5">
                 {!loadingAuth && signed && (
-                    <Link to="/login">
-                    <FiUser size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
+                    <Link onClick={logOut} to="/login">
+                    <FiLogOut size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
                     </Link>
                 )}
 
                 {!loadingAuth && !signed && (
                     <Link to="/login">
-                    <FiLogIn size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
+                    <FiUser size={24} color="#FFF" className="hidden sm:flex hover:scale-110 duration-150" />
                     </Link>
                 )}
 
-                <Link to="/cart">
+                <Link className="relative" to="/cart">
                     <FiShoppingCart size={24} color="#FFF" className="flex hover:scale-110 duration-150 cursor-pointer" />
+                    {cartAmount > 0 && (
+                        <span className="absolute -top-3 -right-3 justify-center bg-emerald-400 rounded-full w-6 h-6 flex items-center">
+                        {cartAmount}
+                        </span>
+                    )}
                 </Link>
 
                 <Link to="#">

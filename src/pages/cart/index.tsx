@@ -7,8 +7,8 @@ export function Cart(){
         <div className="h-screen select-none"
             style={{ backgroundImage: `url(${BackGround})` }}>
 
-        <div className="w-full max-w-7xl mx-auto mt-11">
-            <h1 className="font-medium text-2xl text-center my-4">Meu carrinho</h1>
+        <div className="w-full max-w-7xl mx-auto py-10">
+            <h1 className="font-medium text-white text-2xl text-center my-4">Meu carrinho</h1>
                 <section className="flex items-center justify-between border-b-2 border-gray-300 mx-5">
                 <img
                 src=""
@@ -20,7 +20,7 @@ export function Cart(){
 
                 <div className="flex items-center justify-center gap-3">
                 <button
-                className="bg-slate-600 px-2 rounded text-white font-medium flex items-center justify-center"
+                className="bg-emerald-800 px-2 rounded text-white font-medium flex items-center justify-center"
                 >
                     -
                 </button>
@@ -28,7 +28,7 @@ export function Cart(){
                 1
 
                 <button
-                className="bg-slate-600 px-2 rounded text-white font-medium flex items-center justify-center"
+                className="bg-emerald-800 px-2 rounded text-white font-medium flex items-center justify-center"
                 >
                     +
                 </button>

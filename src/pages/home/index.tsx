@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import BackGround  from "../../images/BackGround_Page.jpg"
 import CatImage from "../../images/Cat_Home_Page.png"
- 
+
 export function Home() {
     const navigate = useNavigate();
+    
   return (
     <div
       className="sm:flex justify-center bg-cover bg-center 2xl:grid 3xl:grid-cols-3 h-screen items-center flex select-none"

@@ -2,66 +2,58 @@ import { type ReactNode, createContext, useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../services/firebaseConnection";
 
-
-
-interface AuthProviderProps{
+interface AuthProviderProps {
     children: ReactNode
 }
 
-type AuthContextData = {
-    signed: boolean;
-    loadingAuth: boolean;
-}
-
-interface UserProps{
+interface UserProps {
     uid: string;
     name: string | null;
     email: string | null;
 }
 
-export const AuthContext = createContext({} as AuthContextData)
+type AuthContextData = {
+    signed: boolean;
+    loadingAuth: boolean;
+    user: UserProps | null; 
+}
 
-function AuthProvider({ children }: AuthProviderProps){
+export const AuthContext = createContext({} as AuthContextData);
+
+function AuthProvider({ children }: AuthProviderProps) {
     const [user, setUser] = useState<UserProps | null>(null);
     const [loadingAuth, setLoadingAuth] = useState(true);
-
+ 
     useEffect(() => {
 
-        const unsub = onAuthStateChanged(auth, (user) =>{
-           
-            if(user){
+        const unsub = onAuthStateChanged(auth, (firebaseUser) => {
+
+            if (firebaseUser) {
                 setUser({
-                    uid: user.uid,
-                    name: user?.displayName,
-                    email: user?.email
-                })
-
-                setLoadingAuth(false);
-            }
-
-            else{
+                    uid: firebaseUser.uid,
+                    name: firebaseUser.displayName,
+                    email: firebaseUser.email
+                });
+            } else {
                 setUser(null);
-                setLoadingAuth(false);
             }
 
+            setLoadingAuth(false);
+        });
 
-        })
+        return () => unsub();
 
-        return () => {
-            unsub();
-        }
+    }, []);
 
-    }, [])
-
-
-    return(
+    return (
         <AuthContext.Provider
-        value={{
-            signed: !!user,
-            loadingAuth,
-        }}
+            value={{
+                signed: !!user,
+                loadingAuth,
+                user
+            }}
         >
-        {children}
+            {children}
         </AuthContext.Provider>
     )
 }
