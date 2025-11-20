@@ -50,7 +50,7 @@ export function Header(){
                 <Link className="relative" to="/cart">
                     <FiShoppingCart size={24} color="#FFF" className="flex hover:scale-110 duration-150 cursor-pointer" />
                     {cartAmount > 0 && (
-                        <span className="absolute -top-3 -right-3 justify-center bg-emerald-400 rounded-full w-6 h-6 flex items-center">
+                        <span className="absolute -top-3 -right-3 justify-center bg-emerald-400 rounded-full w-5 h-5 flex items-center">
                         {cartAmount}
                         </span>
                     )}

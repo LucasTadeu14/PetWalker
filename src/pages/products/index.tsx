@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import { BsCartPlus } from 'react-icons/bs'
 import BackGround from "../../images/BackGround_Page.jpg"
 
 import { api } from '../../services/firebaseConnection'
+import { CartContext } from '../../contexts/CartContext';
 
-interface ProductProps {
+export interface ProductProps {
   id: number;
   title: string;
   description: string;
@@ -13,6 +14,7 @@ interface ProductProps {
 }
 
 export function Products() {
+  const { addItemCart } = useContext(CartContext)
   const [products, setProducts] = useState<ProductProps[]>([])
 
   useEffect(() => {
@@ -23,6 +25,10 @@ export function Products() {
 
     getProducts();
   }, [])
+
+  function handleAddCartItem(product: ProductProps){
+      addItemCart(product);
+  }
 
 
   return (
@@ -63,7 +69,7 @@ export function Products() {
                   })}
                 </strong>
 
-                <button className="bg-emerald-800 hover:scale-110 duration-50 cursor-pointer p-2 rounded-md transition">
+                <button onClick={ () => handleAddCartItem(product)} className="bg-emerald-800 hover:scale-110 duration-50 cursor-pointer p-2 rounded-md transition">
                   <BsCartPlus size={20} color="#FFF" />
                 </button>
               </div>

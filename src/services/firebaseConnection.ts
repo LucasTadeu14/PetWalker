@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 export const api = axios.create({
-  baseURL: "https://fake-api.fly.dev"
+  baseURL: "https://fake-api-g5pj.onrender.com"
 })
    
 const firebaseConfig = {
