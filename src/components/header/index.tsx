@@ -31,7 +31,6 @@ export function Header(){
                 <button onClick={() => navigate("/")} className={linkStyle}>Home</button>
                 <button onClick={() => navigate("/products")} className={linkStyle}>Produtos</button>
                 <button onClick={() => navigate("/about")} className={linkStyle}>Sobre</button>
-                <button onClick={() => navigate("#")} className={linkStyle}>Dicas</button>
                 </div>
 
                 <div className="flex items-center gap-4 mr-5">

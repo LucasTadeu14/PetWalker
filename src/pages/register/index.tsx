@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import Swal from 'sweetalert2'
 
 import { Input } from "../../components/input";
 import { auth } from "../../services/firebaseConnection";
@@ -25,12 +26,21 @@ export function Register() {
 
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
-        console.log("Conta criada com sucesso!");
-        navigate("/home", { replace: true });
+        Swal.fire({
+          title: "Cadastrado com sucesso!",
+          icon: "success",
+          draggable: true,
+          confirmButtonColor: "#09a934",
+        });
+        navigate("/", { replace: true });
       })
-      .catch((error) => {
-        alert("Erro ao registrar!");
-        console.error(error);
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Algo deu errado :(",
+          confirmButtonColor: "#09a934",
+        });
       });
   }
 
