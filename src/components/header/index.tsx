@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
 import { CartContext } from "../../contexts/CartContext";
-import uiController from "../uiController";
+import { useUiController } from "../../contexts/uiControllerContext";
  
 const linkStyle = "mx-4 text-white hover:scale-105 hover:text-emerald-300 duration-100 select-none cursor-pointer"
 
@@ -14,6 +14,7 @@ export function Header(){
     const { signed, loadingAuth} = useContext(AuthContext);
     const navigate = useNavigate();
     const { cartAmount } = useContext(CartContext);
+    const { openPanel } = useUiController();
 
     async function logOut(){
         await signOut(auth)
@@ -56,8 +57,8 @@ export function Header(){
                     )}
                 </Link>
 
-                <button onClick={uiController}>
-                    <FiMenu size={24} color="#FFF" className="sm:hidden flex" />
+                <button onClick={openPanel}>
+                    <FiMenu size={24} color="#FFF" className="sm:hidden flex hover:scale-110 duration-150 cursor-pointer" />
                 </button>
 
                 </div>

@@ -6,12 +6,17 @@ import { RouterProvider } from 'react-router-dom'
 
 import AuthProvider from './contexts/AuthContext.tsx'
 import CartProvider from './contexts/CartContext.tsx'
+import { UiControllerProvider } from './contexts/uiControllerContext.tsx'
+import { RightPanel} from './components/uiController/index.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AuthProvider>
       <CartProvider>
-      <RouterProvider router={router} />
+        <UiControllerProvider>
+            <RightPanel />
+              <RouterProvider router={router} />
+        </UiControllerProvider>
       </CartProvider>
     </AuthProvider>
   </StrictMode>,
