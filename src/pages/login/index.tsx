@@ -9,6 +9,7 @@ import CatLoginImage from "../../images/Cat_Login_Page.png";
 import FirstPageImage from "../../images/BackGround_Login_And_Register_Page.jpg";
 import Logo from "../../images/Logo_In-line.png";
 import LogoPata from "../../images/Logo_Pata.png";
+import Swal from "sweetalert2";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -25,12 +26,21 @@ export function Login() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then(() => {
-        console.log("Login realizado com sucesso!");
+        Swal.fire({
+          title: "Logado com sucesso!",
+          icon: "success",
+          draggable: true,
+          confirmButtonColor: "#09a934",
+        });
         navigate("/", { replace: true });
       })
-      .catch((error) => {
-        alert("Erro ao fazer login!");
-        console.error(error);
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Algo deu errado :(",
+          confirmButtonColor: "#09a934",
+        });
       });
   }
 

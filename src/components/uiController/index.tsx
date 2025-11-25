@@ -1,8 +1,6 @@
 import { useUiController } from "../../contexts/uiControllerContext";
 import { auth } from "../../services/firebaseConnection";
 import { signOut } from "firebase/auth";
-import { Link } from "react-router-dom";
-import { FiUser, FiLogOut} from "react-icons/fi";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
@@ -11,7 +9,7 @@ export function RightPanel() {
   const { open, closePanel } = useUiController();
   const { signed, loadingAuth} = useContext(AuthContext);
 
-  const linkStyle = "py-5 hover:mx-5 border-b px-5 flex hover:scale-110 duration-300 cursor-pointer"
+  const linkStyle = "py-5 text-white hover:mx-5 border-b px-5 flex hover:scale-110 duration-300 cursor-pointer"
 
   async function logOut(){
         await signOut(auth)
@@ -41,21 +39,17 @@ export function RightPanel() {
             Fechar
           </button>
 
-          <Link to="/" className={linkStyle}>Home</Link>
-          <Link to="/products" className={linkStyle}>Produtos</Link>
-          <Link to="/about" className={linkStyle}>Sobre</Link>
+          <a href="/" className={linkStyle}>Home</a>
+          <a href="/products" className={linkStyle}>Produtos</a>
+          <a href="/about" className={linkStyle}>Sobre</a>
 
 
           {!loadingAuth && signed && (
-            <Link onClick={logOut} to="/">
-              <FiLogOut size={24} color="#FFF" className={linkStyle} />
-            </Link>
+            <a onClick={logOut} href="/" className={linkStyle}>Sair</a>
           )}
 
           {!loadingAuth && !signed && (
-            <Link to="/">
-              <FiUser size={24} color="#FFF" className={linkStyle} />
-            </Link>
+            <a href="/login" className={linkStyle}>Logar</a>
           )}
 
         </div>
