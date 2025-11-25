@@ -6,7 +6,7 @@ export function About(){
         <div className="flex flex-col bg-cover bg-center h-screen justify-center items-center  select-none"
             style={{backgroundImage: `url(${BackGround})`}}>
 
-            <div className="bg-button rounded-3xl flex items-center justify-center mb-60 mx-5">
+            <div className="bg-button rounded-3xl flex items-center justify-center z-10 mb-60 mx-5">
                 <p className="flex text-center text-white font-bold lg:text-[20px] p-10">
                     🐾 A PetWalker nasceu da paixão por tecnologia e amor pelos animais. <br />
                     Nosso objetivo é tornar o cuidado com os pets mais prático, seguro e inteligente, unindo <br />

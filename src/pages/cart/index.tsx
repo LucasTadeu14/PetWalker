@@ -17,7 +17,7 @@ export function Cart(){
 
                     {cart.length === 0 &&(
                         <div className=" flex flex-col items-center justify-center">
-                            <p className="text-white font-medium mt-50 text-4xl">Ops seu carrinho esta vazio...</p>
+                            <p className="text-white font-medium mt-50 text-2xl duration-100 md:text-4xl">Ops seu carrinho esta vazio...</p>
                             <Link to="/products" className="mt-10 bg-emerald-800 rounded-[7px] py-3 px-6 flex items-center justify-center cursor-pointer hover:scale-105 duration-200 text-white text-[20px] font-extralight">Acessar Produtos</Link>
                         </div>
                     )}

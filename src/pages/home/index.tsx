@@ -13,7 +13,7 @@ export function Home() {
       <img
         src={CatImage}
         alt="gato do home"
-        className="hidden 3xl:flex max-h-screen justify-self-start"
+        className="hidden 3xl:flex h-full max-h-screen justify-self-start"
       />
 
       <div className="select-none flex flex-col justify-center items-center">
