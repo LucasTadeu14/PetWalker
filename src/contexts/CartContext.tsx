@@ -1,4 +1,4 @@
-import { createContext, type ReactNode, useState } from "react";
+import { createContext, type ReactNode, useState, useEffect, useRef } from "react";
 import { type ProductProps } from "../pages/products";
 
 interface CartContextData{
@@ -28,18 +28,54 @@ export const CartContext = createContext({} as CartContextData)
 function CartProvider({ children }: CartProviderProps){
     const [cart, setCart] = useState<CartProps[]>([])
     const [total, setTotal] = useState("");
+    const isFirstRender = useRef(true); // Flag para rastrear primeira renderização
 
+    // Carregar carrinho do localStorage na montagem
+    useEffect(() => {
+        const storedCart = localStorage.getItem("cart");
+
+        if (storedCart) {
+            setCart(JSON.parse(storedCart));
+        }
+        
+        // Marca que já carregou os dados
+        isFirstRender.current = false;
+    }, []);
+
+    // Salvar carrinho no localStorage sempre que mudar (exceto primeira renderização)
+    useEffect(() => {
+        // NÃO salvar na primeira renderização (evita sobrescrever dados carregados)
+        if (isFirstRender.current) {
+            return;
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        const sum = cart.reduce((acc, item) => acc + item.total, 0);
+        setTotal(
+            sum.toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            })
+        );
+    }, [cart]);
+    
     function addItemCart(newItem: ProductProps){
         const indexItem = cart.findIndex(item => item.id === newItem.id)
 
         if(indexItem !== -1){
-            let cartList = cart;
-
-            cartList[indexItem].amount = cartList[indexItem].amount + 1;
-            cartList[indexItem].total = cartList[indexItem].amount * cartList[indexItem].price;
+            const cartList = cart.map((item, index) => {
+                if(index === indexItem) {
+                    return {
+                        ...item,
+                        amount: item.amount + 1,
+                        total: (item.amount + 1) * item.price
+                    };
+                }
+                return item;
+            });
 
             setCart(cartList)
-            totalResultCart(cartList);
             return;
         }
 
@@ -50,32 +86,29 @@ function CartProvider({ children }: CartProviderProps){
         }
 
         setCart(product => [...product, data])
-        totalResultCart([...cart, data])
     }
 
     function removeItemCart(product:CartProps){
         const indexItem = cart.findIndex(item => item.id === product.id)
 
         if(cart[indexItem]?.amount > 1 ){
-            let cartList = cart;
-
-            cartList[indexItem].amount = cartList[indexItem].amount - 1;
-            cartList[indexItem].total = cartList[indexItem].total - cartList[indexItem].price;
+            const cartList = cart.map((item, index) => {
+                if(index === indexItem) {
+                    return {
+                        ...item,
+                        amount: item.amount - 1,
+                        total: item.total - item.price
+                    };
+                }
+                return item;
+            });
 
             setCart(cartList)
-            totalResultCart(cartList);
             return
         }
 
         const removeItem = cart.filter(item => item.id !== product.id)
         setCart(removeItem);
-    }
-
-    function totalResultCart(items: CartProps[]){
-        let myCart = items;
-        let result = myCart.reduce((acc, obj) => { return acc + obj.total}, 0)
-        const resultFormated = result.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})
-       setTotal(resultFormated);
     }
 
     return(
@@ -87,7 +120,7 @@ function CartProvider({ children }: CartProviderProps){
                 removeItemCart,
                 total
             }}
-            >
+        >
             {children}
         </CartContext.Provider>
     )
