@@ -6,6 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
 import { CartContext } from "../../contexts/CartContext";
+import uiController from "../uiController";
  
 const linkStyle = "mx-4 text-white hover:scale-105 hover:text-emerald-300 duration-100 select-none cursor-pointer"
 
@@ -55,9 +56,9 @@ export function Header(){
                     )}
                 </Link>
 
-                <Link to="#">
+                <button onClick={uiController}>
                     <FiMenu size={24} color="#FFF" className="sm:hidden flex" />
-                </Link>
+                </button>
 
                 </div>
             </nav>
