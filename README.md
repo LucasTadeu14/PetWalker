@@ -1,4 +1,4 @@
-# PetWal# 🐾 PetWalker
+# 🐾 PetWalker
 
 Aplicação desenvolvida em React com foco na simulação de um fluxo real de usuário, incluindo navegação entre páginas, gerenciamento de itens e um carrinho de compras interativo. O objetivo do projeto é demonstrar boas práticas de front-end, integração com serviços externos e organização de componentes.
 
