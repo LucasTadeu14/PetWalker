@@ -34,6 +34,7 @@ function AuthProvider({ children }: AuthProviderProps) {
                     name: firebaseUser.displayName,
                     email: firebaseUser.email
                 });
+                
             } else {
                 setUser(null);
             }
