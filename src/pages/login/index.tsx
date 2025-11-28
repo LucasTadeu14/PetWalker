@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import Swal from "sweetalert2";
 
 import { Input } from "../../components/input";
 import { auth } from "../../services/firebaseConnection";
@@ -9,7 +10,6 @@ import CatLoginImage from "../../images/Cat_Login_Page.png";
 import FirstPageImage from "../../images/BackGround_Login_And_Register_Page.jpg";
 import Logo from "../../images/Logo_In-line.png";
 import LogoPata from "../../images/Logo_Pata.png";
-import Swal from "sweetalert2";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -34,6 +34,7 @@ export function Login() {
         });
         navigate("/", { replace: true });
       })
+
       .catch(() => {
         Swal.fire({
           icon: "error",
@@ -48,6 +49,7 @@ export function Login() {
     <div className="flex flex-row h-dvh select-none  max-h-dvh">
       <section className="bg-emerald-400 flex-1 transition-all duration-700 flex flex-col items-center relative">
         <div className="flex w-full items-start">
+
           <img
             src={LogoPata}
             alt="Logo Pata"
@@ -75,6 +77,7 @@ export function Login() {
             <label className="pl-5 text-verdeAgua font-medium w-full" htmlFor="email">
               Email:
             </label>
+
             <Input
               placeholder="Escreva seu email aqui..."
               name="email"
@@ -85,6 +88,7 @@ export function Login() {
             <label className="pl-5 text-verdeAgua font-medium pt-8 w-full" htmlFor="password">
               Senha:
             </label>
+            
             <Input
               placeholder="***********"
               name="password"

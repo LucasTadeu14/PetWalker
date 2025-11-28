@@ -1,12 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
-import logo from "../../images/logo.png"
 import { FiMenu, FiShoppingCart, FiLogOut, FiUser } from "react-icons/fi";
 import { Link, useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../../services/firebaseConnection";
 import { CartContext } from "../../contexts/CartContext";
 import { useUiController } from "../../contexts/uiControllerContext";
+
+import logo from "../../images/logo.png"
  
 const linkStyle = "mx-4 text-white hover:scale-105 hover:text-emerald-300 duration-100 select-none cursor-pointer"
 
@@ -22,7 +23,7 @@ export function Header(){
 
 
     return(
-        <header className="w-full bg-header fixed z-50">
+        <header className="w-full bg-defaultGray fixed z-50">
             <nav className="w-full flex h-17 items-center justify-between 2xl:max-w-7xl mx-auto select-none">
                 
                 <button onClick={() => navigate("/")}>

@@ -5,7 +5,7 @@ import GitHubLogo from "../../images/GitHub_Logo_White.png"
 
 export function Footer(){
     return(
-        <footer className="flex flex-col w-full h-60 bg-header select-none items-center justify-center">
+        <footer className="flex flex-col w-full h-60 bg-defaultGray select-none items-center justify-center">
             <section className="flex mb-13">
                 <img src={PetWalkerLogo} className="h-4 md:h-7" alt="logo-petWalker"/>
                 <span className="flex justify-center items-center w-2 h-2 mt-3 bg-white rounded-full mx-3"></span>

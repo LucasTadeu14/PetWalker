@@ -34,6 +34,7 @@ export function Register() {
         });
         navigate("/", { replace: true });
       })
+      
       .catch(() => {
         Swal.fire({
           icon: "error",
@@ -47,12 +48,14 @@ export function Register() {
   return (
     <div className="flex flex-row h-dvh select-none">
       <section className="bg-emerald-400 flex-1 flex flex-col items-center relative">
+
         <div className="flex w-full items-start">
           <img
             src={LogoPata}
             alt="Logo Pata"
             className="max-h-8 ml-13 mt-8"
           />
+
           <img
             src={Logo}
             alt="Logo PetWalker"
@@ -109,15 +112,16 @@ export function Register() {
                   hover:bg-transparent hover:text-verdeAgua cursor-pointer
                   max-w-[170px]
                 "
-              >
-                Registrar
+              >Registrar
               </button>
+
             </div>
           </form>
         </nav>
       </section>
 
       <section className="hidden 2xl:flex-3 2xl:flex items-center justify-center">
+
         <img
           src={FirstPageImage}
           alt="Imagem inicial PetWalker"

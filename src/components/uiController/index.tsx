@@ -4,12 +4,11 @@ import { signOut } from "firebase/auth";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
+const linkStyle = "py-5 text-white hover:mx-5 border-b px-5 flex hover:scale-110 duration-300 cursor-pointer"
 
 export function RightPanel() {
   const { open, closePanel } = useUiController();
   const { signed, loadingAuth} = useContext(AuthContext);
-
-  const linkStyle = "py-5 text-white hover:mx-5 border-b px-5 flex hover:scale-110 duration-300 cursor-pointer"
 
   async function logOut(){
         await signOut(auth)
@@ -26,11 +25,11 @@ export function RightPanel() {
 
       <div
         className={`
-          fixed top-0 right-0 h-full w-full bg-header z-50 shadow-xl
+          fixed top-0 right-0 h-full w-full bg-defaultGray z-50 shadow-xl
           transform transition-transform duration-300
           ${open ? "translate-x-0" : "translate-x-full"}
-        `}
-      >
+          `}>
+
         <div className="p-5 flex flex-col">
           <button
             onClick={closePanel}
@@ -42,7 +41,6 @@ export function RightPanel() {
           <a href="/" className={linkStyle}>Home</a>
           <a href="/products" className={linkStyle}>Produtos</a>
           <a href="/about" className={linkStyle}>Sobre</a>
-
 
           {!loadingAuth && signed && (
             <a onClick={logOut} href="/" className={linkStyle}>Sair</a>
