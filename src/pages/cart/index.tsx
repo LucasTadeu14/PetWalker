@@ -9,7 +9,7 @@ export function Cart(){
 
 
     return(
-        <div className="h-screen select-none"
+        <div className="h-screen bg-cover select-none"
             style={{ backgroundImage: `url(${BackGround})` }}>
 
             <div className="w-full max-w-7xl mx-auto py-10">
