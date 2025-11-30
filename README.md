@@ -33,23 +33,23 @@ Este projeto foi construído utilizando tecnologias modernas para garantir alta 
 
 Siga os passos abaixo para rodar o PetWalker no seu ambiente local:
 
-### 1️⃣ Instalar o Node.js  
+### 1 Instalar o Node.js  
 Baixe a versão LTS em:  
 https://nodejs.org  
 O Node já inclui o **npm**.
 
-### instalar bibliotecas utilizadas
+### 2 instalar bibliotecas utilizadas
 
-npm install tailwindcss @tailwindcss/vite
-npm install react-router-dom
-npm install axios
-npm install sweetalert2
-npm install firebase
+- npm install tailwindcss @tailwindcss/vite
+- npm install react-router-dom
+- npm install axios
+- npm install sweetalert2
+- npm install firebase
 
 
 ---
 
-### 2️⃣ Clonar o repositório
+### 3 Clonar o repositório
 
 ```bash
 git clone <https://github.com/LucasTadeu14/PetWalker>
