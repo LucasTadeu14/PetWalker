@@ -24,7 +24,7 @@ Este projeto foi construído utilizando tecnologias modernas para garantir alta 
 - 🛒 Carrinho de compras interativo com adição e remoção de itens  
 - 🔥 Integração com **Firebase** para armazenamento e autenticação  
 - ⚙️ Fluxo completo de usuário simulado  
-- 💅 Interface estilizada com **TailwindCSS**  
+- ⭐ Interface estilizada com **TailwindCSS**  
 - 🔗 Consumo de dados externos utilizando **Axios**
 
 ---
@@ -33,12 +33,12 @@ Este projeto foi construído utilizando tecnologias modernas para garantir alta 
 
 Siga os passos abaixo para rodar o PetWalker no seu ambiente local:
 
-### 1 Instalar o Node.js  
+### 1️⃣ Instalar o Node.js  
 Baixe a versão LTS em:  
 https://nodejs.org  
 O Node já inclui o **npm**.
 
-### 2 instalar bibliotecas utilizadas
+### 2️⃣ instalar bibliotecas utilizadas
 
 - npm install tailwindcss @tailwindcss/vite
 - npm install react-router-dom
@@ -49,7 +49,7 @@ O Node já inclui o **npm**.
 
 ---
 
-### 3 Clonar o repositório
+### 3️⃣ Clonar o repositório
 
 ```bash
 git clone <https://github.com/LucasTadeu14/PetWalker>
@@ -62,7 +62,6 @@ cd PetWalker
 Feito com 💙 por Lucas Tadeu
 
 🔗 LinkedIn: https://www.linkedin.com/in/lucas-tadeu-4828a3330/
-🐙 GitHub: https://github.com/LucasTadeu14
 
 ---
 
