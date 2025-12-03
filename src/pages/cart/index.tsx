@@ -2,7 +2,7 @@ import { useContext } from "react"
 import { CartContext } from "../../contexts/CartContext"
 import { Link } from "react-router-dom";
 
-import BackGround from "../../images/BackGround_Page.jpg"
+import BackGround from "../../../public/images/BackGround_Page.jpg"
 
 export function Cart(){
     const { cart, total, addItemCart, removeItemCart} = useContext(CartContext);

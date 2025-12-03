@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import BackGround  from "../../images/BackGround_Page.jpg"
-import CatImage from "../../images/Cat_Home_Page.png"
+import BackGround  from "../../../public/images/BackGround_Page.jpg"
+import CatImage from "../../../public/images/Cat_Home_Page.png"
 
 export function Home() {
     const navigate = useNavigate();

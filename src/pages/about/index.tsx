@@ -1,5 +1,5 @@
-import BackGround from "../../images/BackGround_Page.jpg"
-import AboutCat from "../../images/About_Cat_Page.png"
+import BackGround from "../../../public/images/BackGround_Page.jpg"
+import AboutCat from "../../../public/images/About_Cat_Page.png"
 
 export function About(){
     return(
