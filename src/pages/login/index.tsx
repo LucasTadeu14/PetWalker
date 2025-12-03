@@ -46,29 +46,29 @@ export function Login() {
   }
 
   return (
-    <div className="flex flex-row h-dvh select-none  max-h-dvh">
+    <div className="flex flex-row h-screen select-none">
       <section className="bg-emerald-400 flex-1 transition-all duration-700 flex flex-col items-center relative">
         <div className="flex w-full items-start">
 
           <img
             src={LogoPata}
             alt="Logo Pata"
-            className="max-h-8 ml-13 mt-8"
+            className="h-8 ml-13 mt-8"
           />
           <img
             src={Logo}
             alt="Logo PetWalker"
-            className="max-h-5 mt-10 ml-2"
+            className="h-5 mt-10 ml-2"
           />
         </div>
 
         <img
           src={CatLoginImage}
           alt="Imagem de cachorro ou gato"
-          className="max-h-45 absolute top-27"
+          className="h-30 sm:h-45 top-41 absolute sm:top-27"
         />
 
-        <nav className="flex-col mt-53 bg-white max-h-[545px] w-[379px] rounded-3xl flex justify-end shadow-lg">
+        <nav className="flex-col mt-53 bg-white sm:h-[545px] sm:w-[379px] rounded-3xl flex justify-end shadow-lg">
           <form onSubmit={handleSubmit} className="flex flex-col items-center px-6 py-8">
             <p className="font-luckiest text-verdeAgua font-light text-[30px] tracking-wide mb-10">
               LOGIN
