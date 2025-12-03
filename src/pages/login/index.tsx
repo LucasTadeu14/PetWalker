@@ -50,16 +50,20 @@ export function Login() {
       <section className="bg-emerald-400 flex-1 transition-all duration-700 flex flex-col items-center relative">
         <div className="flex w-full items-start">
 
-          <img
-            src={LogoPata}
-            alt="Logo Pata"
-            className="h-8 ml-13 mt-8"
-          />
-          <img
-            src={Logo}
-            alt="Logo PetWalker"
-            className="h-5 mt-10 ml-2"
-          />
+          <a href="/">
+            <img
+              src={LogoPata}
+              alt="Logo Pata"
+              className="h-8 ml-13 mt-8"
+            />
+          </a>
+          <a href="/">
+            <img
+              src={Logo}
+              alt="Logo PetWalker"
+              className="h-5 mt-10 ml-2"
+            />
+          </a>
         </div>
 
         <img
