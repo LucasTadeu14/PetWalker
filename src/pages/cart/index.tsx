@@ -17,7 +17,7 @@ export function Cart(){
 
                     {cart.length === 0 &&(
                         <div className=" flex flex-col items-center justify-center">
-                            <p className="text-white font-medium mt-50 text-2xl duration-100 md:text-4xl">Ops seu carrinho esta vazio...</p>
+                            <p className="text-white font-medium mt-50 sm:text-2xl mr-5 duration-100 md:text-4xl">Ops seu carrinho esta vazio...</p>
                             <Link to="/products" className="mt-10 bg-emerald-800 rounded-[7px] py-3 px-6 flex items-center justify-center cursor-pointer hover:scale-105 duration-200 text-white text-[20px] font-extralight">Acessar Produtos</Link>
                         </div>
                     )}
@@ -27,10 +27,10 @@ export function Cart(){
                             <img
                             src={item.cover}
                             alt={item.title} 
-                            className="w-28 rounded-xl my-2"
+                            className="w-20 sm:w-28 rounded-xl my-2"
                             />
 
-                            <strong className="text-white">Preço: {item.price}</strong>
+                            <strong className="text-white mx-3 text-[10px] sm:text-[20px]">Preço: {item.price}</strong>
 
                             <div className="flex items-center justify-center gap-3">
                             <button 
@@ -44,14 +44,14 @@ export function Cart(){
 
                             <button 
                             onClick={ () => addItemCart(item)}
-                            className="bg-emerald-800 px-2 rounded text-white font-medium flex items-center justify-center hover:scale-105 duration-300 cursor-pointer"
+                            className="bg-emerald-800 px-2 rounded mr-3 text-white font-medium flex items-center justify-center hover:scale-105 duration-300 cursor-pointer"
                             >
                                 +
                             </button>
                             </div>
 
 
-                            <strong className="text-white float-right">
+                            <strong className="text-white float-right text-[10px] sm:text-[20px]">
                             SubTotal: <br />
                             {item.total.toLocaleString("pt-BR", {
                                 style:"currency",
