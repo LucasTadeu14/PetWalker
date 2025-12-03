@@ -6,10 +6,10 @@ import Swal from 'sweetalert2'
 import { Input } from "../../components/input";
 import { auth } from "../../services/firebaseConnection";
 
-import DogRegisterImage from "../../../public/images/Dog_Register_Page.png";
-import FirstPageImage from "../../../public/images/BackGround_Login_And_Register_Page.jpg";
-import Logo from "../../../public/images/Logo_In-line.png";
-import LogoPata from "../../../public/images/Logo_Pata.png";
+import DogRegisterImage from "/images/Dog_Register_Page.png";
+import FirstPageImage from "/images/BackGround_Login_And_Register_Page.jpg";
+import Logo from "/images/Logo_In-line.png";
+import LogoPata from "/images/Logo_Pata.png";
 
 export function Register() {
   const [email, setEmail] = useState("");
@@ -97,7 +97,7 @@ export function Register() {
 
             <p className="flex justify-center pt-8">
               Já tem uma conta?
-              <a className="font-medium pl-2 text-blue-700 hover:underline" href="/">
+              <a className="font-medium pl-2 text-blue-700 hover:underline" href="/login">
                 Logar
               </a>
             </p>

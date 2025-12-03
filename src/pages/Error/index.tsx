@@ -1,4 +1,4 @@
-import ErrorDog from "../../../public/images/Dog_Error_Page.png" 
+import ErrorDog from "/images/Dog_Error_Page.png" 
 
 export function Error(){
     return(

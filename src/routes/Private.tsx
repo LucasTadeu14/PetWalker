@@ -1,7 +1,7 @@
 import { type ReactNode, useContext } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { Navigate } from "react-router";
-import BackGroung from "../../public/images/BackGround_Page.jpg";
+import BackGroung from "/images/BackGround_Page.jpg";
 
 interface PrivateProps {
   children: ReactNode;

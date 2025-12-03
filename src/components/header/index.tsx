@@ -7,7 +7,7 @@ import { auth } from "../../services/firebaseConnection";
 import { CartContext } from "../../contexts/CartContext";
 import { useUiController } from "../../contexts/uiControllerContext";
 
-import logo from "../../../public/images/Logo.png"
+import logo from "/images/Logo.png"
  
 const linkStyle = "mx-4 text-white hover:scale-105 hover:text-emerald-300 duration-100 select-none cursor-pointer"
 

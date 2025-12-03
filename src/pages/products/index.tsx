@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react'
 import { BsCartPlus } from 'react-icons/bs'
-import BackGround from "../../../public/images/BackGround_Page.jpg"
+import BackGround from "/images/BackGround_Page.jpg"
 
 import { api } from '../../services/firebaseConnection'
 import { CartContext } from '../../contexts/CartContext';

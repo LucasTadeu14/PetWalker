@@ -1,7 +1,7 @@
-import LinkedInLogo from "../../../public/images/White_Linkedin_Logo-png-6.png"
-import InstaLogo from "../../../public/images/Instagram_Logo.png"
-import PetWalkerLogo from "../../../public/images/Logo_In-line.png"
-import GitHubLogo from "../../../public/images/GitHub_Logo_White.png"
+import LinkedInLogo from "/images/White_Linkedin_Logo-png-6.png"
+import InstaLogo from "/images/Instagram_Logo.png"
+import PetWalkerLogo from "/images/Logo_In-line.png"
+import GitHubLogo from "/images/GitHub_Logo_White.png"
 
 export function Footer(){
     return(
