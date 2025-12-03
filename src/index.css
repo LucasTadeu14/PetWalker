@@ -12,6 +12,7 @@
     --color-defaultGray: #373737;
     --font-luckiest: luckiest, "sans-serif";
     --breakpoint-3xl: 1750px;
+    --breakpoint-4xl: 1880px;
     --breakpoint-ms: 450px;
     --background-color-products: rgba(255,255,255,0.1);
     --max-height:940px

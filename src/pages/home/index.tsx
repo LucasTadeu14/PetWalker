@@ -7,21 +7,22 @@ export function Home() {
     
   return (
     <div
-      className="sm:flex justify-center bg-cover bg-center 2xl:grid 3xl:grid-cols-3 h-screen items-center flex select-none"
+      className="justify-center bg-cover bg-center h-screen items-center flex select-none"
       style={{ backgroundImage: `url(${BackGround})` }}
     >
-      <img
-        src={CatImage}
-        alt="gato do home"
-        className="hidden 3xl:flex h-full max-h-screen justify-self-start"
-      />
 
-      <div className="select-none flex flex-col justify-center items-center">
+        <img
+          src={CatImage}
+          alt="gato do home"
+          className="hidden absolute left-0 4xl:flex max-h-screen justify-self-start"
+        />
+
+      <div className="select-none flex flex-col justify-center items-center absolute">
         <h1 className="text-center text-white font-medium font-luckiest uppercase lg:text-7xl text-5xl tracking-wide select-none my-5">
           Localize <br className="sm:hidden"/> seu PET <br /> sempre que <br /> quiser.
         </h1>
 
-        <p className="text-center text-white font-medium my-1 sm:text-lg md:text-xl lg:text-2xl xl:text-2xl leading-relaxed ">
+        <p className="text-center text-white font-medium my-1 mx-5 sm:text-lg md:text-xl lg:text-2xl xl:text-2xl leading-relaxed ">
         Monitore, localize e fique tranquilo. Descubra <br />como é fácil saber 
         onde seu melhor amigo <br />está a qualquer hora, em qualquer lugar. 
         Segurança,<br/> diversão e liberdade para você e seu pet curtirem juntos.
