@@ -20,7 +20,12 @@ export function Login() {
     e.preventDefault();
 
     if (email === "" || password === "") {
-      alert("Preencha os campos!");
+       Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Preencha os campos",
+          confirmButtonColor: "#09a934",
+      });
       return;
     }
 
@@ -35,14 +40,31 @@ export function Login() {
         navigate("/", { replace: true });
       })
 
-      .catch(() => {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Algo deu errado :(",
-          confirmButtonColor: "#09a934",
-        });
-      });
+      .catch((error) => {
+              let errorMessage
+              
+              switch (error.code) {
+                case 'auth/user-not-found':
+                  errorMessage = 'Usuario não encontrado :(';
+                  break;
+                case 'auth/wrong-password':
+                  errorMessage = 'Senha incorreta...';
+                  break;
+                case 'auth/invalid-email':
+                  errorMessage = 'insira um email válido';
+                  break;
+                default:
+                  errorMessage = 'Ops algo deu errado :(';
+                  break;
+              }
+      
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: (errorMessage),
+                confirmButtonColor: "#09a934",
+              });
+            });
   }
 
   return (

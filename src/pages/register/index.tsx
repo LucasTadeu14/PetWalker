@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword,  } from "firebase/auth";
 import Swal from 'sweetalert2'
 
 import { Input } from "../../components/input";
@@ -35,15 +35,33 @@ export function Register() {
         navigate("/", { replace: true });
       })
       
-      .catch(() => {
+      .catch((error) => {
+        let errorMessage
+        
+        switch (error.code) {
+          case 'auth/email-already-in-use':
+            errorMessage = 'Este email ja esta em uso :(';
+            break;
+          case 'auth/weak-password':
+            errorMessage = 'Senha Fraca...';
+            break;
+          case 'auth/invalid-email':
+            errorMessage = 'insira um email válido';
+            break;
+          default:
+            errorMessage = 'Ops algo deu errado :(';
+            break;
+        }
+
         Swal.fire({
           icon: "error",
           title: "Oops...",
-          text: "Algo deu errado :(",
+          text: (errorMessage),
           confirmButtonColor: "#09a934",
         });
       });
   }
+
 
   return (
     <div className="flex flex-row h-screen min-h-[900px] select-none">
