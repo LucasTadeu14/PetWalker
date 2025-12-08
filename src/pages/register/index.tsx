@@ -46,7 +46,7 @@ export function Register() {
   }
 
   return (
-    <div className="flex flex-row h-screen min-h-[800px] select-none">
+    <div className="flex flex-row h-screen min-h-[900px] select-none">
       <section className="bg-emerald-400 flex-1 flex flex-col items-center relative">
 
         <div className="flex w-full items-start">
