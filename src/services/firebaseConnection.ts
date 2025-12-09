@@ -5,7 +5,7 @@ import axios from 'axios'
 
 
 export const api = axios.create({
-  baseURL: "https://fake-api-petwalker.vercel.app/products"
+  baseURL: "https://fake-api-petwalker.vercel.app"
 })
    
 const firebaseConfig = {
