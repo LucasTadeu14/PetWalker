@@ -2,6 +2,7 @@ import { useState, type FormEvent } from "react";
 import { useNavigate } from "react-router";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 import { Input } from "../../components/input";
 import { auth } from "../../services/firebaseConnection";
@@ -14,17 +15,18 @@ import LogoPata from "/images/Logo_Pata.png";
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate(); 
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     if (email === "" || password === "") {
-       Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Preencha os campos",
-          confirmButtonColor: "#09a934",
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Preencha os campos",
+        confirmButtonColor: "#09a934",
       });
       return;
     }
@@ -39,39 +41,41 @@ export function Login() {
         });
         navigate("/", { replace: true });
       })
-
       .catch((error) => {
-              let errorMessage
-              
-              switch (error.code) {
-                case 'auth/user-not-found':
-                  errorMessage = 'Usuario não encontrado :(';
-                  break;
-                case 'auth/wrong-password':
-                  errorMessage = 'Senha incorreta...';
-                  break;
-                case 'auth/invalid-email':
-                  errorMessage = 'insira um email válido';
-                  break;
-                default:
-                  errorMessage = 'Ops algo deu errado :(';
-                  break;
-              }
-      
-              Swal.fire({
-                icon: "error",
-                title: "Oops...",
-                text: (errorMessage),
-                confirmButtonColor: "#09a934",
-              });
-            });
+        let errorMessage;
+
+        switch (error.code) {
+          case 'auth/user-not-found':
+            errorMessage = 'Usuário não encontrado :(';
+            break;
+          case 'auth/wrong-password':
+            errorMessage = 'Senha incorreta...';
+            break;
+          case 'auth/invalid-email':
+            errorMessage = 'Insira um email válido';
+            break;
+          default:
+            errorMessage = 'Ops, algo deu errado :(';
+            break;
+        }
+
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: errorMessage,
+          confirmButtonColor: "#09a934",
+        });
+      });
   }
+
+  const togglePassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   return (
     <div className="flex flex-row h-screen min-h-[900px] select-none">
       <section className="bg-emerald-400 flex-1 transition-all duration-700 flex flex-col items-center relative">
         <div className="flex w-full items-start">
-
           <a href="/">
             <img
               src={LogoPata}
@@ -115,12 +119,21 @@ export function Login() {
               Senha:
             </label>
             
-            <Input
-              placeholder="***********"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+            <div className="relative w-full">
+              <Input
+                placeholder="***********"
+                name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type={showPassword ? "text" : "password"}
+              />
+              <span
+                onClick={togglePassword}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
 
             <p className="flex justify-center pt-8">
               Não tem uma conta?
@@ -132,13 +145,7 @@ export function Login() {
             <div className="flex justify-center items-center mt-8 mb-15">
               <button
                 type="submit"
-                className="
-                  flex justify-center border-2 border-verdeAgua
-                  rounded-full bg-verdeAgua px-30 py-2.5 text-center text-white
-                  outline-0 transition-all duration-200 ease-in-out
-                  hover:bg-transparent hover:text-verdeAgua cursor-pointer
-                  max-w-[170px]
-                "
+                className="flex justify-center border-2 border-verdeAgua rounded-full bg-verdeAgua px-30 py-2.5 text-center text-white outline-0 transition-all duration-200 ease-in-out hover:bg-transparent hover:text-verdeAgua cursor-pointer max-w-[170px]"
               >
                 Acessar
               </button>
@@ -157,5 +164,3 @@ export function Login() {
     </div>
   );
 }
-
-
