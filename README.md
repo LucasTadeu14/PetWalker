@@ -68,3 +68,13 @@ Feito com 💙 por Lucas Tadeu
 📝 Licença
 
 Este projeto é de uso livre para estudos. 
+```
+# Demonstração visual
+
+![Pagina Home](https://i.imgur.com/cMLqJZr.png)
+![Pagina de Produtos](https://i.imgur.com/t8eWmUB.png)
+![Pagina do Carrinho](https://i.imgur.com/PFh4gmT.png)
+![Pagina de Registo Mobile](https://i.imgur.com/pcK0K33.png)
+![Pagina Home Mobile](https://i.imgur.com/RdR2cpt.png)
+![Pagina do Carrinho Molbile](https://i.imgur.com/p7aItk5.png)
+![Menu Lateral](https://i.imgur.com/ZQ3sPmF.png)
