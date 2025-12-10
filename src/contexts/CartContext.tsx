@@ -1,5 +1,6 @@
 import { createContext, type ReactNode, useState, useEffect, useRef } from "react";
 
+
 export interface ProductProps {
   id: number;
   title: string;
@@ -37,6 +38,7 @@ function CartProvider({ children }: CartProviderProps) {
   const [total, setTotal] = useState("");
   const isFirstRender = useRef(true);
 
+
   useEffect(() => {
     const storedCart = localStorage.getItem("cart");
 
@@ -61,6 +63,7 @@ function CartProvider({ children }: CartProviderProps) {
       })
     );
   }, [cart]);
+
 
   function addItemCart(newItem: ProductProps) {
     const indexItem = cart.findIndex((item) => item.id === newItem.id);
