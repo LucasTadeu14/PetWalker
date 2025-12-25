@@ -3,7 +3,7 @@ import AboutCat from "/images/About_Cat_Page.png"
 
 export function About(){
     return(
-        <div className="flex flex-col bg-cover bg-center min-h-[928px] h-screen justify-center items-center  select-none"
+        <div className="flex flex-col bg-cover bg-center min-h-[928px] h-screen justify-center items-center relative select-none"
             style={{backgroundImage: `url(${BackGround})`}}>
 
             <div className="bg-button max rounded-3xl flex items-center justify-center z-10 mb-60 mx-5">
@@ -23,7 +23,7 @@ export function About(){
                 </p>
             </div>
             
-            <img src={AboutCat} alt="Cat-image" className="max-h-50 [@media(max-height:940px)]:hidden lg:max-h-90 duration-700 ease-in-out transition-all absolute -bottom-8 lg:-bottom-10" />
+            <img src={AboutCat} alt="Cat-image" className="max-h-50 [@media(max-height:940px)]:hidden lg:max-h-90 duration-700 ease-in-out transition-all absolute -bottom-2 lg:-bottom-4" />
             
         </div>
     )
